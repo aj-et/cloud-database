@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+
+:root {
+  --success-color: green;
+  --error-color: red;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #F9FAFB;
+  font-family: 'Open Sans', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
+  overflow: hidden;
+}
+
+.App {
+  text-align: center;
+}
+
+.form-control {
+  margin: 10px;
+}
+
+.form-control input {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin: 5px;
+  font-size: 14px;
+}
+
+.form-control button {
+  cursor: pointer;
+  border: 2px solid;
+  border-radius: 4px;
+  font-size: 16px;
+  padding: 7px;
+  width: 100px;
+
+}
+
+.notification-container {
+  color: red;
+  border: solid;
+  padding: 5px;
+  border-radius: 10px 10px 0 0;
+  position: absolute;
+  bottom: -50px;
+  left: 42%;
+  transition: transform 0.3s ease-in-out;
+}
+
+.notification-container p {
+  margin: 0;
+}
+
+.notification-container.show {
+  transform: translateY(-50px);
+}
