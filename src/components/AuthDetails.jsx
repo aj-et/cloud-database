@@ -27,7 +27,7 @@ const AuthDetails = () => {
     }
     // This will show the sign out button when logged in
     return (
-        <div className='form-control'>{ authUser ? <><p>{`Signed In as ${authUser.email}`}</p><button onClick={userSignOut}>Sign Out</button></> : <></> }</div>
+        <div className='form-control acct-stat'>{ authUser ? <><p>{`Signed In as ${authUser.email}`}</p><button onClick={userSignOut}>Sign Out</button></> : <p>No accounts signed in!</p> }</div>
     )
 }
 

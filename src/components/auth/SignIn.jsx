@@ -12,7 +12,8 @@ const SignIn = () => {
         signInWithEmailAndPassword(auth, email, password).then ((userCredential) => {
             console.log(userCredential)
         }).catch((error) => {
-            showNotification();
+            // showNotification();
+            console.log(error);
         });
 
         // This will clear out the text box when button is clicked
@@ -20,16 +21,16 @@ const SignIn = () => {
         setPassword('');
     };
 
-    // This is the notification stuff I added for fun
-    const notification = document.getElementById('notification-container');
-    const showNotification = () => {
-        notification.classList.add('show');
+    // // This is the notification stuff I added for fun
+    // const notification = document.getElementById('notification-container');
+    // const showNotification = () => {
+    //     notification.classList.add('show');
 
-        // The notification will show up for 2 seconds before disappearing
-        setTimeout(() => {
-            notification.classList.remove('show');
-        }, 2000);
-    }
+    //     // The notification will show up for 2 seconds before disappearing
+    //     setTimeout(() => {
+    //         notification.classList.remove('show');
+    //     }, 2000);
+    // }
 
     return (
         <div className='sign-in-container'>
@@ -41,9 +42,9 @@ const SignIn = () => {
             </form>
 
             {/* This will be hidden until the button is pressed and detected error */}
-            <div className='notification-container' id='notification-container'>
+            {/* <div className='notification-container sign-in' id='notification-container'>
                 <p>Account not found!</p>
-            </div>
+            </div> */}
         </div>
     );
 };

@@ -11,6 +11,7 @@ const SignUp = () => {
         e.preventDefault();
         createUserWithEmailAndPassword(auth, email, password).then ((userCredential) => {
             console.log(userCredential)
+            // showNotification();
         }).catch((error) => {
             console.log(error);
         });
@@ -19,6 +20,17 @@ const SignUp = () => {
         setEmail('');
         setPassword('');
     };
+
+    // // This is the notification stuff I added for fun
+    // const notification = document.getElementById('notification-container');
+    // const showNotification = () => {
+    //     notification.classList.add('show');
+
+    //     // The notification will show up for 2 seconds before disappearing
+    //     setTimeout(() => {
+    //         notification.classList.remove('show');
+    //     }, 2000);
+    // }
     
     // This will display the sign up component
     return (
@@ -29,6 +41,10 @@ const SignUp = () => {
                 <input type='password' placeholder='Enter password' value={password} onChange={(e) => setPassword(e.target.value)}></input>
                 <button type='submit'>Sign Up</button>
             </form>
+
+            {/* <div className='notification-container sign-up' id='notification-container'>
+                <p>Account Created!</p>
+            </div> */}
         </div>
     );
 };
