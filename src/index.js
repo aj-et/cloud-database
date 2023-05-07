@@ -9,6 +9,7 @@ import {
 import reportWebVitals from './reportWebVitals';
 import SignUp from './components/auth/SignUp';
 
+// This is for routes. This is a work in progress
 const router = createBrowserRouter([
   {
     path: '/',

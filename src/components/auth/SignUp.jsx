@@ -6,6 +6,7 @@ const SignUp = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     
+    // This is the event listener for the sign up component
     const signUp = (e) => {
         e.preventDefault();
         createUserWithEmailAndPassword(auth, email, password).then ((userCredential) => {
@@ -14,10 +15,12 @@ const SignUp = () => {
             console.log(error);
         });
 
+        // This will clear out the text field when button is clicked
         setEmail('');
         setPassword('');
     };
     
+    // This will display the sign up component
     return (
         <div className='sign-up-container'>
             <form className='form-control' onSubmit={signUp}>

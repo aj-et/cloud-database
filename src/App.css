@@ -46,6 +46,7 @@ body {
 
 }
 
+/* This will hide the notification */
 .notification-container {
   color: red;
   border: solid;
@@ -61,6 +62,7 @@ body {
   margin: 0;
 }
 
+/* This will show the notification for a brief moment */
 .notification-container.show {
   transform: translateY(-50px);
 }

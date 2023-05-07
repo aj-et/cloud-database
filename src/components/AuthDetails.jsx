@@ -2,8 +2,10 @@ import React, { useEffect, useState } from 'react';
 import { auth } from '../utils/firebase';
 import { onAuthStateChanged, signOut } from '@firebase/auth';
 
+// This will show if you are logged in
 const AuthDetails = () => {
     const [authUser, setAuthUser] = useState(null);
+    // If you are looged in, it will get your user details else it will be set to none
     useEffect(() => {
         const listen = onAuthStateChanged(auth, (user) => {
             if (user) {
@@ -23,6 +25,7 @@ const AuthDetails = () => {
             console.log('Sign out succesful')
         }).catch(error => console.log(error))
     }
+    // This will show the sign out button when logged in
     return (
         <div className='form-control'>{ authUser ? <><p>{`Signed In as ${authUser.email}`}</p><button onClick={userSignOut}>Sign Out</button></> : <></> }</div>
     )

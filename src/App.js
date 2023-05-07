@@ -7,9 +7,9 @@ import AuthDetails from './components/AuthDetails';
 function App() {
   return (
     <div className="App">
-      <SignIn />
-      <SignUp />
-      <AuthDetails />
+      <SignIn /> {/* This contains the signin component  */}
+      <SignUp /> {/* This contains the signup component  */}
+      <AuthDetails /> {/* This show if you are logged in  */}
     </div>
   );
 }

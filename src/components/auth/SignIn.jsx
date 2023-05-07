@@ -6,6 +6,7 @@ const SignIn = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     
+    // This function is the event handler when sign in button is clicked
     const signIn = (e) => {
         e.preventDefault();
         signInWithEmailAndPassword(auth, email, password).then ((userCredential) => {
@@ -14,14 +15,17 @@ const SignIn = () => {
             showNotification();
         });
 
+        // This will clear out the text box when button is clicked
         setEmail('');
         setPassword('');
     };
 
+    // This is the notification stuff I added for fun
     const notification = document.getElementById('notification-container');
     const showNotification = () => {
         notification.classList.add('show');
 
+        // The notification will show up for 2 seconds before disappearing
         setTimeout(() => {
             notification.classList.remove('show');
         }, 2000);
@@ -36,6 +40,7 @@ const SignIn = () => {
                 <button type='submit'>Log In</button>
             </form>
 
+            {/* This will be hidden until the button is pressed and detected error */}
             <div className='notification-container' id='notification-container'>
                 <p>Account not found!</p>
             </div>
